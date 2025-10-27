@@ -15,12 +15,84 @@
   text-align: center;
   border-collapse: collapse;
     }
+    table, th, td{border: 1px solid black}
+  * {
+      box-sizing: border-box;
+      text-align: center;
+      font-family:Arial;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  body {
+      margin: 0;
+      padding: 0;
+  }
+  
+
+  .nav-bar {
+      display: flex;
+      background-color: #9d1919;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+  }
+
+  .nav-links {
+      display: flex;
+      align-items: center;
+  }
+
+  .nav-links, .special-link a {
+      display: flex;
+      gap: 20px; /* space between links */
+      margin: 0;
+      padding: 0;
+  }
+
+  .special-link, .right-part {
+      flex: 1;
+  }
+
+  .special-link a {
+      padding: 15px
+  }
+
+  .nav-links a, .special-link a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+  }
+
+  .nav-links a:hover, .special-link a:hover {
+      text-decoration: underline;
+  }
+
+  * {
+    text-align: center;
+    font-family:Arial;
+  }
+ 
 </style>
 
 
 </head>
 <body>
-    <a href="../index.html"> Home </a>
+      <header>
+    <nav class="nav-bar">
+      <div class="special-link">
+        <a href="../index.html"><strong>Home</strong></a>
+      </div>
+      <div class="nav-links">
+        <a href="https://xafam.github.io/2QPortfolioCSFama/public/2Q1GCsFama.html">Prehistory</a>
+        <a href="https://sean111210.github.io/2QPortfolioCSGelogo/public/2Q1GCesiumGelogo.html">History</a>
+        <a href="https://lourdydin.github.io/2QPortfolioCSDin/public/2Q1GCsDin.html">Stats</a>
+        <a href="https://samfajita.github.io/2QPortfolioCSTejada/public/2Q1GCsTejada.html">Skillset</a>
+      </div>
+      <div class="right-part"></div>
+    </nav>
+</header>
 
     <h1>Lebron's Statistical Journey</h3>
     <h2> Marking History Every Game</h5>

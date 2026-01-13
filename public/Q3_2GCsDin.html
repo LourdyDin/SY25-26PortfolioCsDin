@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Q3 2nd Graded Exercise">
+    <meta name="keywords" content="HTML Forms">
+    <meta name="author" content="AL Mendoza">
+    <title>Sample Form</title>
+    <!-- updated external css link to show how to share it between repository -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="icon" href="../../assets/pshslogo.png" sizes="32x32" type="image/png">
+    <script src="script.js" defer></script>
+   <style>
+    body{
+        padding: 25px;
+        font-family: arial;
+        width: 80%;
+        margin-left: 10%;
+        background-color: #009ccc;
+        text-emphasis-color: yellow;
+        }
+
+        .title {
+            color: #00ffff;
+        }
+
+    input:focus {
+        outline: none; /* Remove default browser outline */
+        border: 2px solid #4CAF50; /* Green border */
+        background-color: #f0fff0; /* Light green background */
+        }
+
+        fieldset:nth-child(2) {
+             margin-top: 20px;
+        }
+
+        legend {
+            background: rgb(0, 0, 0);
+            color: yellow;
+            padding: 5px;
+        }
+        label {
+             margin: 5%;
+        }
+    </style>
+  </head>
+  <body>
+     <header>
+        <nav class="navbar">
+            <a href="../../index.html"> Home </a>
+            <a href="registered.html"> Show Saved Accounts </a>
+        </nav>
+    </header>
+    <section>
+      <form id="dForm" action="registered.html" method="get">
+        <fieldset>
+          <label> Student ID: 
+            <input type="number" name="sid" id="sid" required />
+          </label><br/><br/>
+          <label> Full Name: 
+            <input type="text" name="uname" id="uname" required />
+          </label><br/><br/>
+          <label> Birthday:
+            <input type="date" name="dob" id="dob" />
+          </label><br/><br/>
+          <label> Email address:
+            <input type="email" name="em" id="em" required />
+          </label><br/><br/>
+        </fieldset>  
+        <fieldset>
+            <form id="dForm" action="registered.html" method="get">
+              <fieldset>
+                <label> Mobile Phone: 
+                  <input type="phone" name="ptype" id="ptype" required />
+                </label><br/><br/>
+                <label> gradeLevel:
+                <select id="gradeLevel" name="gradeLevel" required>
+                    <option value="">-- Select your Grade Level --</option> <!-- Placeholder -->
+                    <option value="7">Grade 7</option>
+                    <option value="8">Grade 8</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10</option>
+                    <option value="11">Grade 11</option>
+                    <option value="12">Grade 12</option>
+                </select>
+                </label><br/><br/>
+                <body>
+                    <p>Intern or Extern</p>
+                    <div>
+                    <input type="radio" id="in" name="Intern" value="Intern">
+                    <label for="Intern">Intern</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="ex" name="Intern" value="Extern">
+                        <label for="Extern">Extern</label>
+                    </div>
+                    </body>
+                </label><br/><br/>
+                <label> Preferred Organization / Club:
+                    <select id="cb" name="Club" required>
+                        <option value="">-- Select your preferred Organization / Club --</option> <!-- Placeholder -->
+                        <option value="Polvere">Polvere</option>
+                        <option value="Alianti">Alianti</option>
+                        <option value="Computron">Computron</option>
+                        <option value="Tomorrow">Tomorrow</option>
+                        <option value="Sagala">Sagala</option>
+                        <option value="Volant">Volant</option>
+                    </select>
+                    </label><br/><br/>
+                    <label> Why Do You Want To Join? : 
+                        <textarea name="Join" id="jn">
+                          
+                        </textarea>
+                      </label><br/><br/>
+              </fieldset>  
+          <legend>Action Buttons</legend>
+          <button type="submit"> Accept </button>
+          <input type="reset" value=" Clear " />
+        </fieldset> 
+      </form>
+    </section>
+    <script src="q3e3script.js"></script>
+  </body>
+</html>

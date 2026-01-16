@@ -29,17 +29,11 @@
     input:focus {
         outline: none; /* Remove default browser outline */
         border: 2px solid #4CAF50; /* Green border */
-        background-color: #f0fff0; /* Light green background */
+        background-color: #18c718; /* Light green background */
         }
 
         fieldset:nth-child(2) {
              margin-top: 20px;
-        }
-
-        legend {
-            background: rgb(0, 0, 0);
-            color: yellow;
-            padding: 5px;
         }
         label {
              margin: 5%;
@@ -57,23 +51,23 @@
       <form id="dForm" action="registered.html" method="get">
         <fieldset>
           <label> Student ID: 
-            <input type="number" name="sid" id="sid" required />
+            <input onblur = "BlurFunction" type="number" name="sid" id="sid" required />
           </label><br/><br/>
           <label> Full Name: 
-            <input type="text" name="uname" id="uname" required />
+            <input onblur = "BlurFunction" type="text" name="uname" id="uname" required />
           </label><br/><br/>
           <label> Birthday:
-            <input type="date" name="dob" id="dob" />
+            <input  onblur = "BlurFunction" type="date" name="dob" id="dob" />
           </label><br/><br/>
           <label> Email address:
-            <input type="email" name="em" id="em" required />
+            <input onblur = "BlurFunction" type="email" name="em" id="em" required />
           </label><br/><br/>
         </fieldset>  
         <fieldset>
             <form id="dForm" action="registered.html" method="get">
               <fieldset>
                 <label> Mobile Phone: 
-                  <input type="phone" name="ptype" id="ptype" required />
+                  <input onblur = "BlurFunction" type="phone" name="ptype" id="ptype" required />
                 </label><br/><br/>
                 <label> gradeLevel:
                 <select id="gradeLevel" name="gradeLevel" required>
@@ -121,6 +115,6 @@
         </fieldset> 
       </form>
     </section>
-    <script src="q3e3script.js"></script>
+    <script src="Q3_2GCsDin.js"></script>
   </body>
 </html>

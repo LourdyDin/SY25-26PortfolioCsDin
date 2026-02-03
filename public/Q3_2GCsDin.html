@@ -40,15 +40,12 @@
         }
     </style>
   </head>
+
+  <nav class="navbar">
+    <a href="./viewSignUps.html">View Sign Ups</a>
   <body>
-     <header>
-        <nav class="navbar">
-            <a href="../../index.html"> Home </a>
-            <a href="registered.html"> Show Saved Accounts </a>
-        </nav>
-    </header>
     <section>
-      <form id="dForm" action="registered.html" method="get">
+      <form id="dForm" action="viewSignUps.html" method="get">
         <fieldset>
           <label> Student ID: 
             <input onblur = "BlurFunction" type="number" name="sid" id="sid" required />
@@ -109,11 +106,11 @@
                         </textarea>
                       </label><br/><br/>
               </fieldset>  
-          <legend>Action Buttons</legend>
           <button type="submit"> Accept </button>
           <input type="reset" value=" Clear " />
         </fieldset> 
       </form>
+      
     </section>
     <script src="Q3_2GCsDin.js"></script>
   </body>

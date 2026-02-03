@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Q3 3rd Graded Exercise">
+    <meta name="keywords" content="HTML Forms">
+    <meta name="author" content="AL Mendoza">
+    <title>Registered Signups</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="icon" href="../../assets/pshslogo.png" sizes="32x32" type="image/png">
+    <style>
+      body {
+        padding: 25px;
+        font-family: Arial, sans-serif;
+        width: 80%;
+        margin-left: 10%;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+      table, th, td {
+        border: 1px solid white;
+        padding: 5px;
+      }
+      th {
+        background-color: #009ccc;
+        color: white;
+      }
+      .message {
+        font-weight: bold;
+        color: red;
+      }
+      select {
+        margin-top: 10px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Show List of Signups</h1>
+      </div>
+      <nav class="navbar">
+        <a href="./Q3_2GCsDin.html">Sign Up</a>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Signups Saved In Your Computer</h2>
+      <label>Filter by Club:
+        <select id="clubFilter">
+          <option value="ALL">ALL</option>
+          <option value="Polvere">Polvere</option>
+          <option value="Alianti">Alianti</option>
+          <option value="Computron">Computron</option>
+          <option value="Tomorrow">Tomorrow</option>
+          <option value="Sagala">Sagala</option>
+          <option value="Volant">Volant</option>
+        </select>
+      </label>
+      <div id="output"></div>
+      <p id="totalSignups"></p>
+      
+
+    </section>
+
+    <script>
+      // read from the localStorage saved as a string - to see if there are any signups saved on the user's computer
+      let signupString = localStorage.getItem("signups");
+
+      const outputDiv = document.getElementById("output"); // div where the table will be displayed
+      const totalDiv = document.getElementById("totalSignups"); // paragraph where total count will be shown
+      const filter = document.getElementById("clubFilter"); // dropdown filter element
+
+      if (!signupString) {
+        // if nothing is saved in localStorage
+        outputDiv.innerHTML = "<p class='message'>No signups found in localStorage.</p>";
+      } else {
+        // convert the string into the correct data type (array of objects)
+        const signups = JSON.parse(signupString);
+
+        // function to display signups in a table, filtered by club
+        function displaySignups(club) {
+          // start building the table header
+          let rowString = "<table><tr><th>ID</th><th>Name</th><th>Email</th><th>Birthday</th><th>Grade</th><th>Intern/Extern</th><th>Club</th><th>Reason</th></tr>";
+          let count = 0; // counter for total signups displayed
+
+          // loop through each signup object in the array
+          signups.forEach(s => {
+            // if filtering by club, skip non-matching entries
+            if (club !== "ALL" && s.Club !== club) return;
+
+            // add a row for each signup
+            rowString += `<tr>
+              <td>${s.sid}</td>
+              <td>${s.uname}</td>
+              <td>${s.em}</td>
+              <td>${s.dob}</td>
+              <td>${s.gradeLevel}</td>
+              <td>${s.Intern}</td>
+              <td>${s.Club}</td>
+              <td>${s.Join}</td>
+            </tr>`;
+            count++;
+          });
+
+          rowString += "</table>";
+
+          if (count === 0) {
+            // if no signups match the filter
+            outputDiv.innerHTML = `<p class='message'>No signups found for ${club}.</p>`;
+            totalDiv.innerHTML = "";
+          } else {
+            // display the table and total count
+            outputDiv.innerHTML = rowString;
+            totalDiv.innerHTML = `Total Signups: ${count}`;
+          }
+        }
+
+        // initial load shows all signups
+        displaySignups("ALL");
+
+        // event handler for dropdown filter change
+        filter.addEventListener("change", () => {
+          displaySignups(filter.value);
+        });
+      }
+    </script>
+  </body>
+</html>

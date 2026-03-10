@@ -1,0 +1,86 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.heading {
+    text-align: center;
+}
+
+section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: 500px;
+
+}
+
+form input[type="text"],
+form select {
+  display: block;       /* makes them block-level elements */
+  width: 100%;          
+  margin-bottom: 1rem;  
+  font-size: 1rem;      /* readable text size */
+  border: 1px solid #ccc; /* border */
+  border-radius: 5px;   
+}
+
+
+
+label, legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.rating-section {
+    text-align:left
+}
+
+.rating {
+  direction: rtl; /* ensures stars fill left-to-right */
+  unicode-bidi: bidi-override;
+}
+
+.rating input {
+  display: none; 
+}
+
+.rating label {
+  font-size: 2rem;
+  color: #ccc;      
+  cursor: pointer;
+}
+
+.rating input:checked ~ label {
+  color: gold;       
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: gold;       
+}
+
+button {
+  display: block;      
+  width: 100%;          
+  padding: 1rem;        
+  font-size: 1.2rem;    
+  background-color: #ff0000; 
+  color: white;         
+  border: none;        
+  border-radius: 5px;   
+  cursor: pointer;     
+}
+
+button:hover {
+  background-color: #00b32d; /* green when hovered */
+}
+
+.stars {
+  color: gold;                  /* makes ★ yellow */
+  font-weight: bold;
+}

@@ -30,17 +30,18 @@ function renderMovies() {
   const listDiv = document.getElementById("movieList");
 
   if (movies.length === 0) {
-    listDiv.innerHTML = "<p>No movies here that was saved.</p>";
+    listDiv.innerHTML = "<p>No movies here that were saved.</p>";
     return;
   }
 
   let output = "<ul>";
-  movies.forEach(movie => {
+  movies.forEach((movie, index) => {
     output += `
       <div class="movie-card">
         <p>
           ${movie.title} (${movie.year}) - ${movie.genre}, 
           Rating: <span class="stars">${"★".repeat(movie.rating)}</span>
+          <button onclick="deleteMovie(${index})">Delete</button>
         </p>
       </div>
     `;
@@ -50,6 +51,15 @@ function renderMovies() {
   listDiv.innerHTML = output;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  renderMovies();
-});
+function deleteMovie(index) {
+  let movies = JSON.parse(localStorage.getItem("movies")) || [];
+  const movieTitle = movies[index].title;
+
+  if (confirm("Are you sure you want to delete '" + movieTitle + "'?")) {
+    movies.splice(index, 1); // remove movie
+    localStorage.setItem("movies", JSON.stringify(movies));
+    renderMovies();
+    alert("Movie deleted!");
+  }
+}
+

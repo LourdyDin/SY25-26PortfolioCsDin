@@ -106,7 +106,10 @@ Please answer the following reflection questions (15 minutes)
 a. Could you summarize the differences between the CSS position values (static, relative, absolute, fixed)?
 static is like the default on what you would and like the element appears in the page on where it naturally is at the html order. relative makes it so that you can move from a static and it makes it so that it counts as an element and it dosent like it dosent affect the layout of the surrounding elements. Absolute makes it so that it is positioned relative to its the nearest posiition like relative, absolute, or fixed. If there are none of those it is positioned relative to the document body. Fixed makes it so that 
 b. How does absolute positioning depend on its parent element?
+With absolute it depends on the parent that has position set (like relative, absolute, or fixed). If no parent has that, then it positions itself based on the whole page.
 
 c. How do you differentiate sticky from fixed (you can research on sticky)?
+Sticky acts like relative until you scroll past a point, then it sticks inside its parent. Fixed always stays in the same spot on the screen no matter how far you scroll.
 
 d. If you were designing a webpage for a school event, how might you use positioning to highlight important information? Please give concrete examples.
+I would use fixed for the header so the event name and date are always visible. Sticky for the navigation bar so you can move between schedule and venue easily. Absolute for a notice box to highlight “Registration closes soon!” over the content. Relative for images and captions so they stay aligned neatly with the text.
